@@ -1,0 +1,114 @@
+{
+  "id": "1533922",
+  "name": "提案审批",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2448104",
+      "name": "拜访计划",
+      "font_class": "baifangjihua",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "2448105",
+      "name": "待办事项",
+      "font_class": "daibanshixiang",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "2448109",
+      "name": "工作日志",
+      "font_class": "gongzuorizhi",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "2448120",
+      "name": "库存上报",
+      "font_class": "kucunshangbao",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "2448122",
+      "name": "登录排行",
+      "font_class": "denglupaihang",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "2448129",
+      "name": "门店KPI",
+      "font_class": "mendianKPI",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "2448133",
+      "name": "手动上传",
+      "font_class": "shoudongshangchuan",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "2448135",
+      "name": "问卷调查",
+      "font_class": "wenjuantiaocha",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "2448139",
+      "name": "我的暂存",
+      "font_class": "wodezancun",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "2448140",
+      "name": "业代评估",
+      "font_class": "yedaipinggu",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "2448147",
+      "name": "已办事项",
+      "font_class": "yibanshixiang",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "2699828",
+      "name": "专项检查",
+      "font_class": "zhuanxiangjiancha",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "5429568",
+      "name": "转审",
+      "font_class": "zhuanshen",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "5431279",
+      "name": "拒绝",
+      "font_class": "jujue",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "10061207",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    }
+  ]
+}
