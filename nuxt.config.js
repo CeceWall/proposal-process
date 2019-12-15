@@ -1,7 +1,8 @@
 
 export default {
   server: {
-    host: '0.0.0.0' // default: localhost,
+    host: '0.0.0.0', // default: localhost,
+    port: 3000
   },
   mode: 'universal',
   /*
@@ -11,7 +12,7 @@ export default {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
@@ -34,9 +35,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/vant',
     '~/plugins/components',
-    { src: '~/plugins/rem.js', mode: 'client' },
+    '~/plugins/axios',
+    { src: '~/plugins/client-components.ts', mode: 'client' },
     { src: '~/static/iconfont/iconfont.js', mode: 'client' }
   ],
   /*
@@ -44,6 +45,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxt/typescript-build',
     '@nuxtjs/eslint-module'
   ],
   /*
@@ -51,14 +53,29 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy',
+    'bootstrap-vue/nuxt'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
+    host: 'localhost',
+    port: '3000',
+    debug: true
   },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8080',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
+
   /*
   ** Build configuration
   */
@@ -69,11 +86,11 @@ export default {
       plugins: {
         'autoprefixer': {
           browsers: ['Android >= 4.0', 'iOS >= 7']
-        },
-        'postcss-pxtorem': {
-          rootValue: 37.5,
-          propList: ['*']
         }
+        // 'postcss-pxtorem': {
+        //   rootValue: 37.5,
+        //   propList: ['*']
+        // }
       },
       preset: {
         // 更改postcss-preset-env 设置
@@ -86,6 +103,7 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map'
     }
   }
 }

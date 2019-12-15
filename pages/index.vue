@@ -1,38 +1,45 @@
 <template>
-  <section>
-    <van-panel
-      v-for="menu of menus"
-      :title="menu.title"
-      :key="menu.title"
-      class="menu-panel"
-    >
-      <van-grid>
-        <van-grid-item
-          v-for="item of menu.items"
-          :text="item.text"
-          :key="item.text"
+  <div class="container-fluid pt-2">
+    <div class="row">
+      <section class="home-page page col-md-10 col-12 m-auto">
+        <div
+          v-for="menu of menus"
+          :key="menu.title"
+          class="panel px-4 py-3"
         >
-          <template slot="icon">
-            <icon :name="item.icon" />
-          </template>
-        </van-grid-item>
-      </van-grid>
-    </van-panel>
-  </section>
+          <h3 class="panel-title border-bottom py-2">
+            {{ menu.title }}
+          </h3>
+          <div class="row text-center">
+            <div
+              v-for="item of menu.items"
+              :key="item.text"
+              class="panel-item col-4 col-md-3"
+              @click="$router.push(item.link)"
+            >
+              <icon :name="item.icon" class="panel-item__icon" />
+              <p class="mt-2">
+                {{ item.text }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </template>
 
 <script>
 
 export default {
-  components: {
-  },
+  components: {},
   data () {
     return {
       menus: [
         {
           title: '提案管理',
           items: [
-            { icon: '#iconshoudongshangchuan', text: '提案提报', link: '' },
+            { icon: '#iconshoudongshangchuan', text: '提案提报', link: '/proposal' },
             { icon: '#iconfenxiang', text: '提案分享', link: '' }
           ]
         },
@@ -66,7 +73,24 @@ export default {
 </script>
 
 <style lang="scss">
-  .menu-panel {
-    margin-bottom: 12px;
+  .home-page {
+    background: #E7EFF4;
+    .panel {
+      background: #ffffff;
+      width: 100%;
+
+      .panel-title {
+        font-size: 18px;
+      }
+
+      .panel-item {
+        padding: 12px;
+      }
+
+      .icon {
+        font-size: 2rem;
+      }
+    }
   }
+
 </style>
