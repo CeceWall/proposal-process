@@ -13,9 +13,6 @@ interface Pageable<T> {
 export default class ApprovalIndex extends Vue {
   async asyncData (ctx: Context) {
     const { $api } = ctx.app
-    $api.proposal.addProposal({
-      proposalTypeId: 123
-    })
     return {
       proposalList: await $api.proposal.getShouldApproveProposalList()
     }
