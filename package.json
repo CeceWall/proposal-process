@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "amfe-flexible": "^2.2.1",
     "async-validator": "^3.2.3",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "basscss": "^8.1.0",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.1.0",
